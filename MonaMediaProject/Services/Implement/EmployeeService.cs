@@ -106,10 +106,12 @@ namespace MonaMediaProject.Services.Implement
                     //Format lại định dạng
                     var formattedResult = result.Select(e => new EmployeeViewModel
                     {
+                        Id = e.Id,
                         CodeEmp =  e.CodeEmp,
                         FullName = e.FullName,
                         DateOfBirth = e.DateOfBirth.ToString("dd/MM/yyyy"),
-                        Age = e.Age
+                        Age = DateTime.Now.Year - e.DateOfBirth.Year -
+                        (DateTime.Now < e.DateOfBirth.AddYears(DateTime.Now.Year - e.DateOfBirth.Year) ? 1 : 0)
                     }).ToList();
 
                     resultsObject.Data = formattedResult;

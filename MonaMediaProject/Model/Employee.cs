@@ -14,9 +14,6 @@ namespace MonaMediaProject.Model
 
         public string FullName { get; set; }
         public DateTime DateOfBirth { get; set; }
-
-        [NotMapped] // Vì Age được tính từ DateOfBirth
-        public int Age => DateTime.Now.Year - DateOfBirth.Year;
     }
     public class EmployeeViewModel
     {
