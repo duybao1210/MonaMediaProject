@@ -22,4 +22,13 @@ CREATE TABLE Temp_Employees (
            END) 
 );
 
-B2: pull code từ nhánh master về git pull origin master 
+B2: pull code từ nhánh master về => git pull origin master 
+
+B3: vào app setting cấu hình lại đường dẫn đến server db muốn dùng
+"ConnectionStrings": {
+  "DefaultConnection": "Server={tên server};Database=HRM8_SQL_SE_TESTBUILD;User Id={tên login};Password={password};TrustServerCertificate=True;"
+}
+
+B4: Build source và chạy source trên swagger
+
+B5: Thực thi Login trên giao diện swagger để lấy token mặc định username = admin; password = 123456 => sau khi trả về token thì tiến hành add token để authorize
